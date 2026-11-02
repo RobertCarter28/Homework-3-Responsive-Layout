@@ -1,70 +1,77 @@
-!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>NIL in College Sports</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
-        /* General page styling */
+        /* Color Palette */
+        :root {
+            --navy: #14213d;
+            --red: #c62828;
+            --blue: #2563eb;
+            --light: #f4f7fb;
+            --white: #ffffff;
+            --text: #333333;
+        }
+
+        /* Reset */
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
+        /* Type Selectors */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.6;
         }
 
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.7;
-            background-color: #f3f5f9;
-            color: #222b3a;
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--navy);
+        }
+
+        p {
+            margin-bottom: 16px;
         }
 
         /* Header */
         header {
-            background-color: #101d35;
-            color: white;
+            background: var(--navy);
+            color: var(--white);
             text-align: center;
-            padding: 60px 20px;
+            padding: 32px 16px;
         }
 
         header h1 {
-            font-size: 42px;
-            margin: 0 0 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        header p {
-            max-width: 650px;
-            margin: 0 auto;
-            color: #d7deeb;
-            font-size: 18px;
+            color: var(--white);
+            font-size: 36px;
         }
 
         /* Navigation */
         nav {
-            background-color: #c62828;
-            padding: 12px 20px;
-        }
-
-        nav ul {
-            list-style: none;
+            background: var(--red);
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 25px;
-            padding: 0;
-            margin: 0;
+            gap: 24px;
+            padding: 16px;
         }
 
         nav a {
-            color: white;
+            color: var(--white);
             text-decoration: none;
             font-weight: bold;
         }
@@ -73,110 +80,136 @@
             text-decoration: underline;
         }
 
-        /* Main content */
-        main {
-            max-width: 1000px;
-            margin: 35px auto;
-            padding: 0 20px;
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 32px 24px;
         }
 
-        section {
-            background-color: white;
-            margin-bottom: 30px;
-            padding: 30px;
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 24px;
+            background: var(--white);
+            padding: 32px;
+            border-radius: 12px;
+            margin-bottom: 32px;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            margin-bottom: 16px;
+        }
+
+        .nil-image {
+            width: 100%;
+            height: auto;
             border-radius: 10px;
-            border-left: 5px solid #c62828;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-            scroll-margin-top: 20px;
         }
 
-        section h2 {
-            color: #101d35;
-            margin-top: 0;
-            font-size: 28px;
+        /* Class Selectors */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 24px;
         }
 
-        article {
-            background-color: #f5f7fb;
-            padding: 18px 22px;
-            margin-top: 20px;
+        .card {
+            background: var(--white);
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            transition: 0.3s;
+        }
+
+        /* ID Selector */
+        #main-heading {
+            text-align: center;
+            color: var(--red);
+            margin-bottom: 24px;
+        }
+
+        /* Button */
+        .button {
+            display: inline-block;
+            background: var(--blue);
+            color: var(--white);
+            padding: 12px 24px;
+            text-decoration: none;
             border-radius: 8px;
-        }
-
-        article h3 {
-            color: #c62828;
-            margin-top: 0;
-        }
-
-        /* Lists */
-        li {
-            margin-bottom: 8px;
-        }
-
-        ul li::marker,
-        ol li::marker {
-            color: #c62828;
             font-weight: bold;
         }
 
-        /* Image */
-        figure {
-            margin: 25px 0 10px;
-        }
-
-        figure img {
-            display: block;
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        figcaption {
-            color: #606b7b;
-            font-size: 14px;
-            margin-top: 8px;
-            text-align: center;
+        .button:hover {
+            background: var(--navy);
         }
 
         /* Footer */
         footer {
-            background-color: #101d35;
-            color: white;
+            background: var(--navy);
+            color: var(--white);
             text-align: center;
-            padding: 25px 20px;
+            padding: 24px;
+            margin-top: 32px;
         }
 
         footer p {
             margin: 0;
         }
 
-        /* Mobile-friendly layout */
-        @media (max-width: 600px) {
-            header {
-                padding: 40px 15px;
+        /* Tablet Layout */
+        @media screen and (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .card-container {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             header h1 {
-                font-size: 30px;
+                font-size: 28px;
+            }
+        }
+
+        /* Mobile Layout */
+        @media screen and (max-width: 480px) {
+            .card-container {
+                grid-template-columns: 1fr;
             }
 
-            nav ul {
+            nav {
                 flex-direction: column;
                 align-items: center;
                 gap: 8px;
             }
 
-            main {
-                margin: 20px auto;
-                padding: 0 12px;
+            .container {
+                padding: 16px;
             }
 
-            section {
-                padding: 20px;
+            .hero {
+                padding: 16px;
             }
 
-            section h2 {
+            .hero h2 {
+                font-size: 23px;
+            }
+
+            header h1 {
                 font-size: 24px;
             }
         }
@@ -185,118 +218,157 @@
 
 <body>
 
+    <!-- Website Header -->
     <header>
         <h1>NIL in College Sports</h1>
-        <p>
-            Learn how college athletes can earn money from
-            their name, image, and likeness.
-        </p>
+        <p>Name, Image, and Likeness</p>
     </header>
 
-    <nav aria-label="Main navigation">
-        <ul>
-            <li><a href="#what-is-nil">What Is NIL?</a></li>
-            <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="#benefits">Benefits</a></li>
-            <li><a href="#future">Future of NIL</a></li>
-        </ul>
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#what-is-nil">What Is NIL?</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#challenges">Challenges</a>
+        <a href="#future">The Future</a>
     </nav>
 
-    <main>
+    <main class="container">
 
+        <!-- Home Section -->
+        <section class="hero" id="home">
+            <div>
+                <h2>Is NIL a Good Thing or a Bad Thing?</h2>
+
+                <p>
+                    NIL has changed college sports by allowing
+                    student-athletes to earn money from their
+                    name, image, and likeness.
+                </p>
+
+                <p>
+                    Explore how NIL affects athletes, colleges,
+                    and the future of college athletics.
+                </p>
+
+                <a href="#what-is-nil" class="button">
+                    Learn More
+                </a>
+            </div>
+
+            <div>
+                <img
+                    src="NIL.png"
+                    alt="College athletes and NIL in college sports"
+                    class="nil-image"
+                >
+            </div>
+        </section>
+
+        <!-- What Is NIL -->
         <section id="what-is-nil">
-            <h2>What Is NIL?</h2>
+            <h2 id="main-heading">What Is NIL?</h2>
 
             <p>
                 NIL stands for Name, Image, and Likeness.
-                It allows college athletes to earn money through
-                endorsements, sponsorships, and other business
-                opportunities involving their personal brand.
+                It gives college athletes opportunities to
+                earn money by using their personal brand.
+                Athletes can receive compensation through
+                sponsorships, advertisements, endorsements,
+                social media, and other business opportunities.
             </p>
-
-            <figure>
-    <img src="nil.jpg" alt="College athletes signing endorsement deals">
-    <figcaption>
-        College athletes can build their personal brands through sports and partnerships.
-    </figcaption>
-</figure>
         </section>
 
-        <section id="how-it-works">
-            <h2>How Does NIL Work?</h2>
-
-            <p>
-                College athletes can partner with companies,
-                promote products, and use social media to
-                earn money. They must follow the applicable
-                rules and requirements.
-            </p>
-
-            <article>
-                <h3>Examples of NIL Opportunities</h3>
-
-                <ul>
-                    <li>Social media sponsorships</li>
-                    <li>Brand endorsements</li>
-                    <li>Paid appearances</li>
-                    <li>Sports camps and clinics</li>
-                    <li>Personal merchandise</li>
-                </ul>
-            </article>
-        </section>
-
+        <!-- Benefits -->
         <section id="benefits">
-            <h2>Benefits and Challenges of NIL</h2>
+            <h2 id="main-heading">Benefits of NIL</h2>
 
-            <article>
-                <h3>Benefits for Athletes</h3>
+            <div class="card-container">
 
-                <p>
-                    NIL gives athletes opportunities to earn
-                    income, develop business skills, and build
-                    a personal brand while attending college.
-                </p>
-            </article>
+                <article class="card">
+                    <h3>Financial Opportunities</h3>
+                    <p>
+                        Athletes can earn money while attending
+                        college and participating in sports.
+                    </p>
+                </article>
 
-            <article>
-                <h3>Challenges of NIL</h3>
+                <article class="card">
+                    <h3>Personal Branding</h3>
+                    <p>
+                        Athletes can build their reputation
+                        and connect with businesses and fans.
+                    </p>
+                </article>
 
-                <p>
-                    Athletes may need to balance schoolwork,
-                    training, and business responsibilities.
-                    They also need to understand contracts,
-                    taxes, and applicable regulations.
-                </p>
-            </article>
+                <article class="card">
+                    <h3>Business Experience</h3>
+                    <p>
+                        NIL helps athletes learn about marketing,
+                        sponsorships, and managing money.
+                    </p>
+                </article>
+
+            </div>
         </section>
 
+        <!-- Challenges -->
+        <section id="challenges">
+            <h2 id="main-heading">Challenges of NIL</h2>
+
+            <div class="card-container">
+
+                <article class="card">
+                    <h3>Unequal Opportunities</h3>
+                    <p>
+                        Some athletes receive more sponsorship
+                        opportunities than others.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Pressure on Athletes</h3>
+                    <p>
+                        Athletes must balance school, sports,
+                        and business responsibilities.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Changing College Sports</h3>
+                    <p>
+                        NIL continues to change recruiting,
+                        competition, and college athletics.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Future -->
         <section id="future">
-            <h2>The Future of NIL</h2>
+            <h2 id="main-heading">The Future of NIL</h2>
 
             <p>
-                NIL continues to change college sports.
-                Athletes, universities, and businesses are
-                adapting to new opportunities and evolving
-                policies.
+                NIL will continue to play an important role
+                in college athletics. As rules and opportunities
+                develop, athletes will have new ways to earn
+                money, grow their brands, and prepare for
+                careers beyond sports.
             </p>
 
-            <h3>Tips for College Athletes</h3>
-
-            <ol>
-                <li>Understand the rules that apply to you.</li>
-                <li>Read contracts before signing them.</li>
-                <li>Protect your personal information.</li>
-                <li>Balance academics and athletic commitments.</li>
-            </ol>
+            <p>
+                NIL creates opportunities, but it also brings
+                challenges that colleges and athletes must
+                continue to address.
+            </p>
         </section>
 
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>
-            Student Project: Name, Image, and Likeness
-            in College Sports.
-        </p>
+        <p>&copy; 2026 NIL in College Sports | Student Website Project</p>
     </footer>
 
 </body>
