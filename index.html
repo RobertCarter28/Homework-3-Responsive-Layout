@@ -4,228 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>NIL in College Sports</title>
-
-    <!-- Google Fonts -->
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* Color Palette */
-        :root {
-            --navy: #14213d;
-            --red: #c62828;
-            --blue: #2563eb;
-            --light: #f4f7fb;
-            --white: #ffffff;
-            --text: #333333;
-        }
-
-        /* Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Type Selectors */
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background: var(--light);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Poppins', sans-serif;
-            color: var(--navy);
-        }
-
-        p {
-            margin-bottom: 16px;
-        }
-
-        /* Header */
-        header {
-            background: var(--navy);
-            color: var(--white);
-            text-align: center;
-            padding: 32px 16px;
-        }
-
-        header h1 {
-            color: var(--white);
-            font-size: 36px;
-        }
-
-        /* Navigation */
-        nav {
-            background: var(--red);
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 24px;
-            padding: 16px;
-        }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        /* Main Container */
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 32px 24px;
-        }
-
-        /* Hero Section */
-        .hero {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 24px;
-            background: var(--white);
-            padding: 32px;
-            border-radius: 12px;
-            margin-bottom: 32px;
-        }
-
-        .hero h2 {
-            font-size: 30px;
-            margin-bottom: 16px;
-        }
-
-        .nil-image {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        /* Class Selectors */
-        .card-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 24px;
-        }
-
-        .card {
-            background: var(--white);
-            padding: 24px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-
-        .card h3 {
-            margin-bottom: 12px;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            transition: 0.3s;
-        }
-
-        /* ID Selector */
-        #main-heading {
-            text-align: center;
-            color: var(--red);
-            margin-bottom: 24px;
-        }
-
-        /* Button */
-        .button {
-            display: inline-block;
-            background: var(--blue);
-            color: var(--white);
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-        }
-
-        .button:hover {
-            background: var(--navy);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--navy);
-            color: var(--white);
-            text-align: center;
-            padding: 24px;
-            margin-top: 32px;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        /* Tablet Layout */
-        @media screen and (max-width: 768px) {
-            .hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .card-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            header h1 {
-                font-size: 28px;
-            }
-        }
-
-        /* Mobile Layout */
-        @media screen and (max-width: 480px) {
-            .card-container {
-                grid-template-columns: 1fr;
-            }
-
-            nav {
-                flex-direction: column;
-                align-items: center;
-                gap: 8px;
-            }
-
-            .container {
-                padding: 16px;
-            }
-
-            .hero {
-                padding: 16px;
-            }
-
-            .hero h2 {
-                font-size: 23px;
-            }
-
-            header h1 {
-                font-size: 24px;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- Website Header -->
-    <header>
-        <h1>NIL in College Sports</h1>
-        <p>Name, Image, and Likeness</p>
+    <header class="site-header">
+        <div class="header-content">
+            <h1>NIL in College Sports</h1>
+            <p>Name, Image, and Likeness</p>
+        </div>
     </header>
 
-    <!-- Navigation -->
-    <nav>
+    <nav class="navbar">
         <a href="#home">Home</a>
         <a href="#what-is-nil">What Is NIL?</a>
         <a href="#benefits">Benefits</a>
@@ -235,9 +30,12 @@
 
     <main class="container">
 
-        <!-- Home Section -->
+        <!-- Hero Section -->
         <section class="hero" id="home">
-            <div>
+
+            <div class="hero-content">
+                <span class="eyebrow">COLLEGE ATHLETICS</span>
+
                 <h2>Is NIL a Good Thing or a Bad Thing?</h2>
 
                 <p>
@@ -256,18 +54,23 @@
                 </a>
             </div>
 
-            <div>
+            <div class="hero-image">
                 <img
                     src="NIL.png"
                     alt="College athletes and NIL in college sports"
                     class="nil-image"
                 >
             </div>
+
         </section>
 
         <!-- What Is NIL -->
-        <section id="what-is-nil">
-            <h2 id="main-heading">What Is NIL?</h2>
+        <section class="content-section" id="what-is-nil">
+
+            <div class="section-heading">
+                <span class="eyebrow">THE BASICS</span>
+                <h2>What Is NIL?</h2>
+            </div>
 
             <p>
                 NIL stands for Name, Image, and Likeness.
@@ -277,15 +80,21 @@
                 sponsorships, advertisements, endorsements,
                 social media, and other business opportunities.
             </p>
+
         </section>
 
         <!-- Benefits -->
-        <section id="benefits">
-            <h2 id="main-heading">Benefits of NIL</h2>
+        <section class="content-section" id="benefits">
+
+            <div class="section-heading">
+                <span class="eyebrow">THE POSITIVES</span>
+                <h2>Benefits of NIL</h2>
+            </div>
 
             <div class="card-container">
 
                 <article class="card">
+                    <div class="card-number">01</div>
                     <h3>Financial Opportunities</h3>
                     <p>
                         Athletes can earn money while attending
@@ -294,6 +103,7 @@
                 </article>
 
                 <article class="card">
+                    <div class="card-number">02</div>
                     <h3>Personal Branding</h3>
                     <p>
                         Athletes can build their reputation
@@ -302,6 +112,7 @@
                 </article>
 
                 <article class="card">
+                    <div class="card-number">03</div>
                     <h3>Business Experience</h3>
                     <p>
                         NIL helps athletes learn about marketing,
@@ -313,12 +124,17 @@
         </section>
 
         <!-- Challenges -->
-        <section id="challenges">
-            <h2 id="main-heading">Challenges of NIL</h2>
+        <section class="content-section" id="challenges">
+
+            <div class="section-heading">
+                <span class="eyebrow">THE DIFFICULTIES</span>
+                <h2>Challenges of NIL</h2>
+            </div>
 
             <div class="card-container">
 
                 <article class="card">
+                    <div class="card-number">01</div>
                     <h3>Unequal Opportunities</h3>
                     <p>
                         Some athletes receive more sponsorship
@@ -327,6 +143,7 @@
                 </article>
 
                 <article class="card">
+                    <div class="card-number">02</div>
                     <h3>Pressure on Athletes</h3>
                     <p>
                         Athletes must balance school, sports,
@@ -335,6 +152,7 @@
                 </article>
 
                 <article class="card">
+                    <div class="card-number">03</div>
                     <h3>Changing College Sports</h3>
                     <p>
                         NIL continues to change recruiting,
@@ -346,8 +164,12 @@
         </section>
 
         <!-- Future -->
-        <section id="future">
-            <h2 id="main-heading">The Future of NIL</h2>
+        <section class="content-section future-section" id="future">
+
+            <div class="section-heading">
+                <span class="eyebrow">LOOKING AHEAD</span>
+                <h2>The Future of NIL</h2>
+            </div>
 
             <p>
                 NIL will continue to play an important role
@@ -362,11 +184,11 @@
                 challenges that colleges and athletes must
                 continue to address.
             </p>
+
         </section>
 
     </main>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 NIL in College Sports | Student Website Project</p>
     </footer>
