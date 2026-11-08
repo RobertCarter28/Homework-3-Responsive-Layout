@@ -1,16 +1,16 @@
 
 /* ==================================
-   GLOBAL STYLES
+   GLOBAL ACCESSIBILITY AND STYLES
 ================================== */
 
 :root {
     --navy: #14213d;
     --red: #c62828;
-    --blue: #2563eb;
+    --blue: #174db5;
     --light: #f4f7fb;
     --white: #ffffff;
     --text: #333333;
-    --muted: #64748b;
+    --muted: #526176;
 }
 
 * {
@@ -29,7 +29,6 @@ body {
     background: var(--light);
     color: var(--text);
     line-height: 1.7;
-    overflow-x: hidden;
 }
 
 img {
@@ -37,12 +36,43 @@ img {
     max-width: 100%;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Poppins', sans-serif;
 }
 
 p {
     margin-bottom: 16px;
+}
+
+/* ==================================
+   KEYBOARD ACCESSIBILITY
+================================== */
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    z-index: 1000;
+    background: var(--white);
+    color: var(--navy);
+    padding: 12px 18px;
+    border: 2px solid var(--navy);
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+/* Visible focus for keyboard users */
+
+a:focus-visible {
+    outline: 3px solid #ffbf47;
+    outline-offset: 4px;
+    border-radius: 4px;
 }
 
 /* ==================================
@@ -74,7 +104,7 @@ p {
 }
 
 /* ==================================
-   NAVIGATION - FLEXBOX
+   NAVIGATION
 ================================== */
 
 .navbar {
@@ -112,7 +142,7 @@ p {
 }
 
 /* ==================================
-   HERO SECTION - CSS GRID
+   HERO SECTION
 ================================== */
 
 .hero {
@@ -127,16 +157,17 @@ p {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
 }
 
-.hero-content {
+.hero-content,
+.hero-image {
     min-width: 0;
 }
 
 .eyebrow {
     display: inline-block;
     color: var(--red);
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     margin-bottom: 12px;
 }
 
@@ -151,10 +182,6 @@ p {
     color: var(--muted);
 }
 
-.hero-image {
-    min-width: 0;
-}
-
 .nil-image {
     width: 100%;
     height: auto;
@@ -164,7 +191,7 @@ p {
 }
 
 /* ==================================
-   BUTTON
+   LEARN MORE LINK
 ================================== */
 
 .button {
@@ -211,7 +238,7 @@ p {
 }
 
 /* ==================================
-   CARDS - CSS GRID
+   BENEFITS AND CHALLENGES CARDS
 ================================== */
 
 .card-container {
@@ -279,7 +306,6 @@ footer p {
 
 /* ==================================
    TABLET RESPONSIVE LAYOUT
-   Breakpoint: 800px
 ================================== */
 
 @media screen and (max-width: 800px) {
@@ -305,12 +331,10 @@ footer p {
     .navbar {
         gap: 10px 18px;
     }
-
 }
 
 /* ==================================
    MOBILE RESPONSIVE LAYOUT
-   Breakpoint: 600px
 ================================== */
 
 @media screen and (max-width: 600px) {
@@ -334,7 +358,7 @@ footer p {
     }
 
     .navbar a {
-        padding: 5px 12px;
+        padding: 8px 12px;
     }
 
     .container {
@@ -371,12 +395,10 @@ footer p {
     .card {
         padding: 22px;
     }
-
 }
 
 /* ==================================
    SMALL PHONE SUPPORT
-   Breakpoint: 360px
 ================================== */
 
 @media screen and (max-width: 360px) {
@@ -408,5 +430,23 @@ footer p {
     .card {
         padding: 17px;
     }
-
 }
+
+/* ==================================
+   REDUCED MOTION ACCESSIBILITY
+================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
